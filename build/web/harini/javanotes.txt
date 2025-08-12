@@ -1,0 +1,720 @@
+ 		JAVA
+
+* It is a high-level and object-oriented programming language.
+* It supports Multi-Threading.
+	(We can execute more than one threads concurrently to utilize the CPU efficiently.)
+* It supports Networking.
+* It supports Automatic Garbage collection.
+	(Unused objects are collected and removed from memory automatically.)
+* It is a platform(OS)-independent language.
+	(It can be run on any OS.
+	Because a java program is compiled into bytecode file(class file), instead of creating exe file.)
+
+Applications:-
+	* To develop Application programs.
+	* To develop Networking programs.
+	* To develop embedded systems.
+	* To develop web applications.
+
+Features:-
+	* Simple and Easy.
+	* Secure.
+	(since bytecodes are surrounded by firewall coding, so it is protected from malicious and virus programs.)
+	* MultiThreading.
+	* Platform-independent.
+	* Dynamic --> objects are created dynamically.
+	* Object-oriented.
+	* Architecture Neutral --> java programs can be executed in any processor.
+	* Robust(Powerful)
+	since it has 2 significant features, such as,
+	i) Memory Management.
+	       Unused objects are removed to save memory and prevent from memory leaks.
+	ii) Exception Handling.
+	       To avoid abnormal program termination.
+
+Developement of Java program:-
+	A java source code is compiled into bytecode(class file) using java compiler.
+	Then byte code is executed by Interpreter is nothing but JVM(Java Virtual Machine).
+	Since JVM is a Runtime Environment for Java Byte code, It is also called as JRE.
+	JIT(Just-In-Time) Compiler is added with JVM to increase the speed of execution.
+
+JDK(Java Development Kit) 1.0 to 1.9(version)
+	It contains several tools to develop a java program.
+javac --> java compiler
+java  --> java interpreter(JVM)
+javap  -->to disassemble a class file into human readable format.
+appletviewer  --> to execute applet class file.
+
+Types of Java program:
+  i) Application program.
+	It is console application. It should have main function.
+  ii) Applet program.
+	It can be run on browser or appletviewer.
+
+DataTypes:-
+	To allocate memory bytes for the variables which are used in program.
+short	- 2
+int	- 4
+long	- 8
+float	- 4
+double	- 8
+char	- 2
+byte	- 1
+boolean	- 2
+
+
+Structure of Java program:-
+package <pkgname>;
+import <pkgname.classname>;
+<modifier> class <classname>
+{
+	data member decl&init;
+	member fn defn;
+}
+.
+.
+.
+.
+<modifier> class <classname>
+{
+          public static void main(String s[])
+             {
+	set of executable statements;
+             }
+}
+
+package:-
+	It is a collection of related classes, interfaces and sub packages.
+
+Available packages in corejava:-
+import java.lang.*;  (It is a default package)
+	" * " means that all the classes and interfaces.
+java.io.*; (I/O classes are defined)
+java.applet.*; (Applet class is defined)
+java.awt.*; (UI components are defined)
+java.awt.event.*; (Event handling classes are defined)
+java.net.*; (networking classes defined)
+java.sql.*; (classes to access database)
+java.util.*; (classes to store collection of objects)
+java.text.*; (classes for formatting the text.)
+javax.swing.*; (advanced package of AWT)
+java.rmi.*; (classes to develop distributed appln)
+
+classes and interfaces in java.lang package:-
+
+Object ( It is a super class for all the java classes).
+System, Exception, Math, Error, Thread, Runtime, Process, Short, Integer, Long, Float, Double, Character, Byte, Boolean, String
+interfaces:-
+Runnable, Cloneable , Comparable
+
+Wrapper classes:-
+	Their names are same as primary data type names but one exception that they start with capital letter.
+	They're used to convert from one object to primary datatype, a datatype to an object and from one object to another object among them.
+
+Methods to display an output on Std O/P device:-
+
+System.out.print("Welcome");
+System.out.println("Welcome");
+int c=25;
+ System.out.println("Result:"+c);
+	here " + " is concatenational operator.
+o/p:-	Result:25
+
+To get input from KeyBoard:-
+String name=System.console().readLine();
+	(or)
+Console c1=System.console();
+String name=c1.readLine();
+	Here,
+	console() method returns Console object and,
+	readLine() method returns String object.
+
+Note:-
+i) Java programs should be saved as  ---> filename.java
+ii) To compile a java program
+	javac <filename.java>
+iii) To run a java program
+	java <classname> (where the main function is defined)
+
+
+Conversion Functions:-
+i) To convert from string object to int:-
+Integer
+public static int parseInt(String);
+
+ii) To convert from string object to float:-
+Float
+public static float parseFloat(String);
+
+iii) To convert from string object to double:-
+Double
+public static double parseDouble(String);
+
+iv) To convert from string object to long:-
+Long
+public static long parseLong(String);
+
+v) To convert from string object to short:-
+Short
+public static short parseShort(String);
+ 
+
+Command line arguments:-
+	When we run a java program in dos prompt, we can give some values at this line which are passed as arguments to the main function.
+Note:-
+To get length(no.of elements) of an array, use the following variable:-
+		arrayname.length;
+
+
+
+Types of Variables:-
+1) Local variables
+2) Instance variables
+3) Static variables
+
+1) Local variables:-
+	Variables declared within a method or a block are known as local variables whose scope and lifetime are available within corresponding function or block only.
+
+2) Instance variables:-(Non-static variables)
+	Variables declared within a class are known as instance variables.
+	They are initialized at runtime when an object is created.
+	They're initialized separate copies for every objects.
+	They can be accessed through objects.
+syntax:-
+	objname.variablename;
+
+3) Static variables(class variables)
+	Variables declared within a class as static are known as static variables.
+	They are initialized only one copy for class at compilation time.
+	They can be shared by all the objects of that class.
+	They can be accessed through class name.
+syntax:-
+	classname.variablename;
+
+Types of methods:-
+1) Instance methods:(Non-static methods)
+	They can be accessed through object.
+syntax:
+	objname.methodname(args);
+2) static methods:-
+	They can be accessed through class.
+	They access only the static variables of same class directly.
+	They can also access non-static varaibles(instance variables) through object.
+	They never allow current object(such as this keyword).
+syntax:
+	classname.methodname(args);
+
+Note:-
+Current Object:-
+	A method is being currently invoked by which object that is known as current object.
+	current object is referred by the keyword "this".
+
+
+Creating instance(object) of a class:-
+	We can create an object for a class by invoking constructor.
+	constructor of class can be invoked by "new" keyword.
+syntax:-
+classname <ref.var>=new constructorname(args);
+eg:-
+Demo d1=new Demo();
+	here d1 is a reference variable of type Demo and which refers object of Demo class.
+(or)
+Demo d1;	//obj declaration
+d1=new Demo();	//obj initialization
+
+
+
+
+Constructors:-
+	It is a special member function, since it's name is same as class name.
+	To initialize the objects in memory.
+	It is invoked automatically when an object is created.
+	They don't have return type.
+	They can be overloaded.
+	They can not be overridden.
+	All the classes having a default constructor(no argument constructor) implicitly.
+	After we defined a parameterized constructor, default constructor will be destroyed. After that, if we want to create an object by invoking default constructor, then default constructor to be defined explicitly by ourself as needed.
+	Constructors will be invoked in order of inheritance.
+Types:-
+	No argument constructor.
+	Parameterized constructor.
+
+
+Arrays:-
+	Array is a collection of items with same data type.
+	Array elements are stored in consecutive memory location.
+Syntax to 1D array:-
+datatype arrayname[]=new datatype[arraysize];
+eg:-
+1) int a[]=new int[5];
+2) int []a=new int[5];
+3) int a[];
+	a=new int[5];
+4) int a[]={5,22,25,4,16};
+5) int a[]=new int[]{5,22,25,4,16};
+
+Syntax to 2D array:-
+datatype arrayname[][]=new datatype[rowsize][colsize];
+eg:-
+1) int a[][]=new int[5][5];
+2) int [][]a=new int[5][5];
+3) int a[][];
+	a=new int[5][5];
+4) int a[][]={{1,2},{3,4},{5,6}};
+5) int a[][]=new int[][]{{1,2},{3,4},{5,6}};
+
+
+String
+	It is an immutable(unchangeable) object.
+	ie, current object would not be changed.
+	It is a class which is defined in java.lang package.
+	It defines several methods to manipulate on String object.
+constructors:-
+String();
+String(String);
+String(char[]);
+String(char[],int offset,int length);
+String(byte[]);
+String(byte[],int offset,int length);
+String(StringBuffer);
+Methods of String class:-
+public int length();
+public char charAt(int index);
+public int indexOf(char);
+public int indexOf(char,int searchindex);
+public int indexOf(String);
+public int indexOf(String,int searchindex);
+public int lastIndexOf(char);
+public int lastIndexOf(char,int searchindex);
+public int lastIndexOf(String);
+public int lastIndexOf(String,int searchindex);
+public String trim();
+public String toLowerCase();
+public String toUpperCase();
+public String substring(int index);
+public String substring(int startindex,int endindex);
+public int compareTo(String);
+public int compareToIgnoreCase(String);
+public boolean equals(String);
+public boolean equalsIgnoreCase(String);
+public boolean startsWith(String);
+public boolean endsWith(String);
+public byte[] getBytes(); 	// to convert from string obj to byte array
+public char[] toCharArray();	// to convert from string obj to char array
+public static String valueOf(short);
+public static String valueOf(int);
+public static String valueOf(long);
+public static String valueOf(float);
+public static String valueOf(double);
+
+StringBuffer (Since JDK1.0)
+	It is a peer class of String.
+	It is a mutable(changeable) object.
+	ie, current object would be changed.
+	It is a class which is defined in java.lang package.
+	It defines several methods to manipulate on StringBuffer object.
+	It contains only synchronized methods.
+constructor:-
+public StringBuffer();
+public StringBuffer(String);
+methods:-
+public StringBuffer append(String value);
+public StringBuffer append(int value);
+public StringBuffer append(float value); // for all data types.
+public StringBuffer insert(int index,String value);
+public StringBuffer insert(int index,int value);
+public StringBuffer insert(int index,float value); // for all data types.
+public StringBuffer deleteCharAt(int index);
+public StringBuffer delete(int startindex,int endindex);
+public StringBuffer replace(int startindex,int endindex,String value);
+public StringBuffer reverse();
+
+StringBuilder (Since JDK1.5)
+	It is mostly like as StringBuffer class one exception that it contains only non-synchronized methods.
+
+
+Inheritance:-
+	To create a new class from an existing class.
+	Common properties are derived from base class.
+	It is used for Reusability and Extensibility.
+types:-
+i) Single level inheritance.
+ii) Multi-level inheritance.
+iii) Hierarchical inheritance.
+
+Syntax to inherit a class:-
+<specifier> class <clsname> extends <baseclsname>
+{
+	data member decl&init;
+	member fn defn;
+}
+eg:-
+class B extends A
+{
+}
+
+Access specifiers:-
+	They determine visibility,accessibility and scope of the members of a class in other classes.
+
+private:-
+	private members of a class can be accessed by members of that class only.
+public:-
+	public members of a class can be accessed by members of all the classes in all the packages.
+protected:-
+	protected members of a class can be accessed by members of all the classes in same package and only by members of derived classes in other packages.
+
+Package level Access specifier:- (members with no access specifier)
+	They can be accessed by members of all the classes of same package only.
+
+
+
+Invoking constructor of base class in derived class:-
+	"super" is a keyword to invoke constructor of base class.
+eg:-
+super();
+super(args);
+	This statement should be written at very first statement of the derived class constructor.
+	"super" keyword is also used to invoke & access members of base class:
+	super.variablename;
+	super.methodname(args);
+
+
+Polymorphism(Many forms)
+	It means that one interface, Multiple actions.
+	Common methods are used.
+Types:-
+i) Static polymorphism
+ii) Dynamic polymorphism
+
+i) Static polymorphism:-(Compile time polymorphism)
+	Methods are binding to an object during compilation time.
+	Constructor overloading and method overloading are examples of static polymorphism.
+
+Method overloading:-
+	A class or its derived class can have more than one methods with same name but they differ with no.of args or data types.
+
+
+Dynamic polymorphism:-(Runtime polymorphism)
+	Methods are binding to an object during runtime.
+Method overriding:-
+	A class can have a method which name is same as method name of it's base class including same args,same data types and same return type(ie same signature).
+	Derived class can modify the statements of its base class using overriding.
+	To achieve dynamic polymorphism.
+
+Dynamic method dispatch:-
+	A reference variable of a base type can refer object of itself and object of it's derived classes.
+	By using this reference variable, we can invoke only overridden methods.
+	methods are resolved at runtime.
+
+
+Abstract class:-
+	A class can have a method with no definition(no body of the function), then that should be declared as abstract method and whose class should be declared as abstract class.
+	An abstract class can have both abstract and non-abstract methods.
+	Since abstract class can not be instantiated, it should have atleast one derived class.
+	Abstract methods should be overridden by derived classes whereas non-abstract methods may or may not be overridden by derived classes.
+	It is used to achieve dynamic polymorphism.
+	Common methods are used.
+
+Interface:-
+	It is like as abstract class but one exception that in which all the methods can not have body.
+	All the methods of an interface are public and abstract by default.
+	All the methods of an interface should be defined(implemented) by its derived class.
+	All the variables declared with in an interface are public,static and final by default.
+	Since interface can not be instantiated,it should have atleast one derived class.
+	To achieve multiple inheritance.
+	To achieve pure dynamic polymorphism.
+	A class can inherit more than one interfaces using the keyword "implements".
+	An interface can inherit another interface using the keyword "extends".
+
+syntax to define an interface:-
+<specifier> interface <interfacename>
+{
+	methods decl;
+	constant fields decl&init;
+}
+
+Final Modifiers:-
+	Final classes can't be inherited.
+	Final methods can't be overridden.
+	Final variable's value can't be changed.
+
+Exception Handling:-
+	Exception is an abnormal condition. if it is occured in a program, then program will be terminated suddenly.
+	To overcome this problem, we have some exception handlers in java program, such as try,catch,throw,throws and finally.
+	Exceptions are occured at runtime.
+	Basically, a java program may face two kind of abnormal conditions. such as, Error and Exception.
+	Exceptions are handled by java program whereas Errors can not be trapped.
+	Usually, we have two types of Exception.
+	i) Checked Exception
+	They are checked at compilation time.
+	They're belonging to Exception class.
+	eg:
+	IOException, ClassNotFoundException.
+	ii) Unchecked Exception
+	They are checked at runtime.
+	They're belonging to RuntimeException class.
+	eg:-	NumberFormatException,ArithmeticException.
+
+Syntax to try,catch and finally block:-
+try
+{
+	set of exe sts;
+	.
+	.
+	throw new Exception();
+}
+catch(Exception exp)
+{
+	System.out.println(exp);
+}
+.
+.
+.
+finally
+{
+	write statemets;
+}
+
+	We can write set of executable statements within a try block which should be followed by atleast one catch block or finally block.
+	try block can have more than one catch blocks.
+	If an exception is occured by a statement within a try block , then corresponding object is created and which will be thrown to corresponding catch block.
+	We can also throw an exception explicitly using the keyword "throw".
+	Even exceptions are handled or not, the statements within a finally block will be executed.
+	When we define a method,we can throw the multiple exceptions using the keyword "throws" if we do not want to handle those exceptions in this method.
+constructors of Exception class:-
+Exception();
+Exception(String);
+method:-
+public String getMessage();
+public void printStackTrace();
+
+
+Package
+i) Syntax to create a package:-
+package <pkgname>;
+	pkgname should be same as current directory and this statement should be written at very first line of the program.
+	then we may import required packages and define classes and interfaces as required.
+	Then compile them.
+ii) Using user-defined pkg in a pgm:-
+	import required user-def pkg.
+	then use corresponding classes in our program.
+	Before we compile this program, we have to set classpath as following method:-
+
+set classpath=%classpath%;path of pkg;.;
+
+
+
+java.io.File
+	It is a class of java.io package which defines several methods to manipulate some operations on files & directories.
+constructors:-
+File(String path&filename);
+File(String path,String filename);
+methods:-
+public boolean exists();
+public boolean isDirectory();
+public boolean isFile();
+public long length();
+public String getName();
+public String getParent();
+public String getPath();
+public long lastModified();
+public boolean setReadOnly();
+public boolean canRead();
+public boolean canWrite();
+public boolean isHidden();
+public boolean delete();
+public boolean renameTo(File);
+public boolean mkdir();
+public boolean createNewFile()throws IOException;
+public String[] list();
+public String[] list(FilenameFilter);
+	Here FilenameFilter is an interface.
+
+FilenameFilter
+	To filter particular files & folders.
+method:-
+public boolean accept(File,String);
+
+
+Streams:-
+	Stream is a collection of bytes.
+	It is a flow of data.
+	It is a path of communication between source and destination.
+types:-
+InputStream:
+	To read the data from particular i/p device such as keyboard, mouse, scanner and i/p resource such as file, socket.
+OutputStream:
+	To write the data to the particular o/p device such as monitor,printer and o/p resource such as file,socket.
+
+classes:-
+
+1) OutputStream
+	It is an abstract class and it is the super class for all the byte-oriented o/p stream classes.
+methods:-
+public void write(int);
+public void write(byte[]);
+public void write(byte[],int offset,int length);
+public void flush();		//clear the stream.
+public void close();
+
+2) InputStream
+	It is an abstract class and it is the super class for all the byte-oriented i/p stream classes.
+methods:-
+public int read();
+public int read(byte[]);
+public int read(byte[],int offset,int length);
+public long skip(long);
+public long available();
+public void close();
+
+3) FileOutputStream
+	To write data to particular file.
+constructors:-
+FileOutputStream(String filepath&name);
+FileOutputStream(String path,boolean append);
+FileOutputStream(File);
+methods:-
+	They're same as it's base class.
+
+4) FileInputStream
+	To read data from particular file.
+constructors:-
+FileInputStream(String filepath&name)throws FileNotFoundException;
+FileInputStream(File)throws FileNotFoundException;
+methods:-
+	They're same as it's base class.
+
+5) BufferedOutputStream
+	It is used to write data to particular o/p stream and to avoid system call(OS) occurence for every process.
+constructor:-
+BufferedOutputStream(OutputStream);
+BufferedOutputStream(OutputStream,int bufsize);
+methods:-
+	They're same as it's base class.
+
+6) BufferedInputStream
+	It is used to read data from particular i/p stream and to avoid system call(OS) occurence for every process.
+constructor:-
+BufferedInputStream(InputStream);
+BufferedInputStream(InputStream,int bufsize);
+methods:-
+	They're same as it's base class.
+	
+7) DataOutputStream
+	To write primary datatypes to the particular o/p stream as encoded format.
+constructor:
+DataOutputStream(OutputStream);
+methods:-
+public void writeShort(short);
+public void writeInt(int);
+public void writeLong(long);
+public void writeFloat(float);
+public void writeDouble(double);
+public void writeChar(char);
+public void writeByte(byte);
+public void writeBoolean(boolean);
+
+8) DataInputStream
+	To read primary datatypes from the particular i/p stream as decoded format.
+constructor:
+DataInputStream(InputStream);
+methods:-
+public short readShort();
+public int readInt();
+public long readLong();
+public float readFloat();
+public double readDouble();
+public char readChar();
+public byte readByte();
+public boolean readBoolean();
+
+
+PrintStream
+	It is used to write any type of data to the particular o/p stream.
+constructors:-
+PrintStream(OutputStream);
+PrintStream(OutputStream,boolean flushstate);
+PrintStream(String file name&path);
+methods:-
+public void print(int);(for all datatypes).
+public void print(String);
+public void print(Object);
+public void println(int);(for all datatypes).
+public void println(String);
+public void println(Object);
+
+
+
+
+1) Writer
+	It is an abstract class and it is the super class for all the char-oriented o/p stream classes.
+methods:-
+public void write(int);
+public void write(char[]);
+public void write(char[],int offset,int length);
+public void write(String);
+public void flush();
+public void close();
+
+2) Reader
+	It is an abstract class and it is the super class for all the char-oriented i/p stream classes.
+methods:-
+public int read();
+public int read(char[]);
+public int read(char[],int offset,int length);
+public long skip(long);
+public void close();
+
+3) FileWriter
+	To write data to particular file.
+constructors:-
+FileWriter(String filepath&name);
+FileWriter(String path&name,boolean append);
+FileWriter(File);
+methods:-
+	Same as it's base class.
+
+4) FileReader
+	To read data from particular file.
+constructors:-
+FileReader(String filepath&name)throws FileNotFoundException;
+FileReader(File)throws FileNotFoundException;
+methods:-
+	Same as it's base class.
+
+5) BufferedWriter
+	To write data to particular o/p stream and to avoid system call(OS) occurence for every process.
+constructor:-
+BufferedWriter(Writer);
+BufferedWriter(Writer,int buffsize);
+methods:-
+public void newLine();
+
+6) BufferedReader
+	To read data from particular i/p stream and to avoid system call(OS) occurence for every process.
+constructor:-
+BufferedReader(Reader);
+BufferedReader(Reader,int buffsize);
+method:-
+public String readLine();
+
+7) InputStreamReader
+	It acts as a bridge between byte-oriented and char-oriented streams.
+constructor:-
+InputStreamReader(InputStream);
+
+8) PrintWriter
+	It is used to write any type of data to byte-oriented o/p stream as well as char-oriented o/p stream.
+	We should set flush state as true.
+constructors:-
+PrintWriter(OutputStream);
+PrintWriter(OutputStream,boolean flushstate);
+PrintWriter(Writer);
+PrintWriter(Writer,boolean flushstate);
+methods:-
+public void print(int);	//(for all data types)
+public void print(String);
+public void print(Object);
+public void println(int);	//(for all data types)
+public void println(String);
+public void println(Object); 

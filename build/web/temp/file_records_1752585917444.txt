@@ -1,0 +1,18 @@
+FILE RECORDS REPORT
+Generated on: Tue Jul 15 18:55:17 IST 2025
+--------------------------------------------------
+File ID    File Name                      Uploaded Date   Owner ID  
+--------------------------------------------------
+1          ayyappan.jpg                   2025-03-17      amsasi    
+2          j2ee.ppt                       2025-03-17      amsasi    
+3          python.pdf                     2025-03-17      harini    
+4          javanotes.txt                  2025-03-17      harini    
+5          Food.png                       2025-07-08      User@Krth 
+6          Nature.pdf                     2025-07-08      User@Krth 
+7          Project List.xlsx              2025-07-08      User@Krth 
+8          Childhood.odt                  2025-07-08      User@Ayshu
+9          Nature.pdf                     2025-07-15      User@Krth 
+10         Childhood.docx                 2025-07-15      Karthi06  
+11         galaxies and the universe.pptx 2025-07-15      User@Ayshu
+--------------------------------------------------
+End of Report
